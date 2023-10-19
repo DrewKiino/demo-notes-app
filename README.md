@@ -1,3 +1,11 @@
+## Demo
+
+https://github.com/DrewKiino/demo-notes-app/assets/13005359/f4e1e796-ec50-4e80-b70f-c4448c0fc384
+
+https://github.com/DrewKiino/demo-notes-app/assets/13005359/2b2f9815-edee-4068-8984-b52c6895680c
+
+## Prompt
+
 Demonstrate your ability to design and develop a basic single-screen iOS notes app using Swift and Firebase for data storage.
 
 
