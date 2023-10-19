@@ -12,6 +12,7 @@
 		3A046E5A2AE0B0B1008349B5 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 3A046E592AE0B0B1008349B5 /* SnapKit */; };
 		3A046E5C2AE0B1C0008349B5 /* EditNoteModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A046E5B2AE0B1C0008349B5 /* EditNoteModalView.swift */; };
 		3A046E5E2AE0B9A8008349B5 /* UIWindow+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A046E5D2AE0B9A8008349B5 /* UIWindow+Ext.swift */; };
+		3A046E692AE0CBAF008349B5 /* NotesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A046E682AE0CBAF008349B5 /* NotesService.swift */; };
 		3A3478482ADFD31700F11274 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3478472ADFD31700F11274 /* Date+Extension.swift */; };
 		3A464D472ADFA82200912404 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A464D462ADFA82200912404 /* AppDelegate.swift */; };
 		3A464D492ADFA82200912404 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A464D482ADFA82200912404 /* SceneDelegate.swift */; };
@@ -36,6 +37,7 @@
 		3A046E562AE0AF49008349B5 /* InteractiveModalPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InteractiveModalPresenter.swift; sourceTree = "<group>"; };
 		3A046E5B2AE0B1C0008349B5 /* EditNoteModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditNoteModalView.swift; sourceTree = "<group>"; };
 		3A046E5D2AE0B9A8008349B5 /* UIWindow+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIWindow+Ext.swift"; sourceTree = "<group>"; };
+		3A046E682AE0CBAF008349B5 /* NotesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesService.swift; sourceTree = "<group>"; };
 		3A3478472ADFD31700F11274 /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 		3A464D432ADFA82200912404 /* FlaxLabsNotes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlaxLabsNotes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A464D462ADFA82200912404 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -134,6 +136,7 @@
 			children = (
 				3AE021092ADFAECC001BC9B2 /* Resolver.swift */,
 				3AE021042ADFAE62001BC9B2 /* FirebaseService.swift */,
+				3A046E682AE0CBAF008349B5 /* NotesService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -272,6 +275,7 @@
 				3A464D5B2ADFA87000912404 /* NotesListViewController.swift in Sources */,
 				3AE021162ADFBA7F001BC9B2 /* WireError.swift in Sources */,
 				3A464D472ADFA82200912404 /* AppDelegate.swift in Sources */,
+				3A046E692AE0CBAF008349B5 /* NotesService.swift in Sources */,
 				3A3478482ADFD31700F11274 /* Date+Extension.swift in Sources */,
 				3AE021052ADFAE62001BC9B2 /* FirebaseService.swift in Sources */,
 				3A464D492ADFA82200912404 /* SceneDelegate.swift in Sources */,

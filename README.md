@@ -1,5 +1,3 @@
-# demo-notes-app
-
 Demonstrate your ability to design and develop a basic single-screen iOS notes app using Swift and Firebase for data storage.
 
 

@@ -24,7 +24,7 @@ public protocol NotesListViewModel {
 
 public class NotesListViewModelImpl: NotesListViewModel {
   
-  private let firebaseService: FirebaseService
+  private let notesService: NotesService
   
   private weak var delegate: NotesListViewModelDelegate?
   
@@ -40,7 +40,7 @@ public class NotesListViewModelImpl: NotesListViewModel {
   }
   
   public init(resolver: Resolver) {
-    self.firebaseService = resolver.get()
+    self.notesService = resolver.get()
   }
   
   public func setDelegate(_ delegate: NotesListViewModelDelegate) {
@@ -49,7 +49,7 @@ public class NotesListViewModelImpl: NotesListViewModel {
   
   public func configure(delegate: NotesListViewModelDelegate) {
     self.delegate = delegate
-    self.firebaseService.listNotes { [weak self] noteSubjects, error in
+    self.notesService.refreshNotesSubjects { [weak self] noteSubjects, error in
       guard let self = self else { return }
       if let error = error {
         self.delegate?.notesListViewModel(didReceiveError: error)
@@ -61,12 +61,12 @@ public class NotesListViewModelImpl: NotesListViewModel {
   }
   
   public func noteSubject(for noteId: String) -> CurrentValueSubject<Note, Exception>? {
-    self.firebaseService.fetchNoteSubject(for: noteId)
+    self.notesService.fetchNoteSubject(for: noteId)
   }
   
   public func addNote(title: String, body: String) -> CurrentValueSubject<Note, Exception> {
     // insert to remote then receive observable note subject
-    let noteSubject = self.firebaseService.insertNote(title: title, body: body)
+    let noteSubject = self.notesService.insertNote(title: title, body: body)
     // add observable to cache
     self.noteSubjects.insert(noteSubject, at: 0)
     // publish new cache
@@ -75,14 +75,14 @@ public class NotesListViewModelImpl: NotesListViewModel {
   }
   
   public func updateNote(noteId: String, title: String?, body: String?) {
-    self.firebaseService.updateNote(noteId: noteId, title: title, body: body)
+    self.notesService.updateNote(noteId: noteId, title: title, body: body)
   }
   
   public func removeNote(noteId: String) {
     // remove note from subjects
     self.noteSubjects = self.noteSubjects.filter { $0.value.noteId != noteId }
     // remove from remote
-    self.firebaseService.removeNote(noteId: noteId)
+    self.notesService.removeNote(noteId: noteId)
     // publish new cache
     self.delegate?.notesListViewModel(didUpdateList: self)
   }

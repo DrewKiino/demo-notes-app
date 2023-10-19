@@ -72,6 +72,7 @@ public class EditNoteModalView: UIView, InteractiveModalPresenterChildView {
   public init(subject: CurrentValueSubject<Note, Exception>) {
     self.subject = subject
     super.init(frame: .zero)
+    self.configureSelf()
     self.configureLayout()
     
     self.cancellable = self.subject.sink(receiveCompletion: { _ in }) { [weak self] note in
@@ -99,6 +100,10 @@ public class EditNoteModalView: UIView, InteractiveModalPresenterChildView {
     } else {
       return self.bodyField.becomeFirstResponder()
     }
+  }
+  
+  private func configureSelf() {
+    self.backgroundColor = .systemBackground
   }
   
   private func configureLayout() {
